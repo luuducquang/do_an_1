@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{026553E1-36CD-4979-949C-C3E6693BA49B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DoAn1_LuuDucQuang_10121201</RootNamespace>
+    <AssemblyName>DoAn1-LuuDucQuang-10121201</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\..\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.20.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.20.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.6.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.6\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=11.5.6.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Doc.11.5.6\lib\net40\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.5.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.5.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Document.NET, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.2.4.0\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Words.NET, Version=2.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.2.4.0\lib\net40\Xceed.Words.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bussiness\ChitietHDBBUS.cs" />
+    <Compile Include="Bussiness\ChitietHDNBUS.cs" />
+    <Compile Include="Bussiness\QLHoaDonBanBUS.cs" />
+    <Compile Include="Bussiness\QLHoaDonNhapBUS.cs" />
+    <Compile Include="Bussiness\QLKhachHangBUS.cs" />
+    <Compile Include="Bussiness\QLLoaiMyPhamBUS.cs" />
+    <Compile Include="Bussiness\QLMyPhamBUS.cs" />
+    <Compile Include="Bussiness\QLNhaCungCapBUS.cs" />
+    <Compile Include="Bussiness\QLNhanVienBUS.cs" />
+    <Compile Include="Bussiness\QLTonKhoBUS.cs" />
+    <Compile Include="Bussiness\UserBUS.cs" />
+    <Compile Include="DataAccess\ChitietHDB.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\ChitietHDBDAO.cs" />
+    <Compile Include="DataAccess\ChitietHDN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\ChitietHDNDAO.cs" />
+    <Compile Include="DataAccess\DangNhap.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Hoadonban.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Hoadonnhap.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\KhachHang.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\LoaiMyPham.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\NhaCungCap.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\NhanVien.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\QLHoaDonBanDAO.cs" />
+    <Compile Include="DataAccess\QLHoaDonNhapDAO.cs" />
+    <Compile Include="DataAccess\QLKhachHangDAO.cs" />
+    <Compile Include="DataAccess\QLLoaiMyPhamDAO.cs" />
+    <Compile Include="DataAccess\QLMyPhamDAO.cs" />
+    <Compile Include="DataAccess\QLNhaCungCapDAO.cs" />
+    <Compile Include="DataAccess\QLNhanVienDAO.cs" />
+    <Compile Include="DataAccess\QLTonKhoDAO.cs" />
+    <Compile Include="DataAccess\SP_SPbancham_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SP_SPbanchay_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SP_SPsaphet_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SP_thongkenamHDB_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SP_thongkenamHDN_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SP_thongkethangHDB_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SP_thongkethangHDN_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SP_TimthoigianHDN_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\SP_Timthoigian_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\ThongTinMyPham.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\Tonkho.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\UserDAO.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ChitietHDBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietHDBan.Designer.cs">
+      <DependentUpon>ChitietHDBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChitietHDNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietHDNhap.Designer.cs">
+      <DependentUpon>ChitietHDNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DangNhapHT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DangNhapHT.Designer.cs">
+      <DependentUpon>DangNhapHT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLHoaDonBan.Designer.cs">
+      <DependentUpon>QLHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLHoaDonNhap.Designer.cs">
+      <DependentUpon>QLHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLKhachHang.Designer.cs">
+      <DependentUpon>QLKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLLoaiMyPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLLoaiMyPham.Designer.cs">
+      <DependentUpon>QLLoaiMyPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLNhaCungCap.Designer.cs">
+      <DependentUpon>QLNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLTaiKhoan.Designer.cs">
+      <DependentUpon>QLTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLThongTinMyPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLThongTinMyPham.Designer.cs">
+      <DependentUpon>QLThongTinMyPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLThongTinNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLThongTinNhanVien.Designer.cs">
+      <DependentUpon>QLThongTinNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QLTonKho.Designer.cs">
+      <DependentUpon>QLTonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Thongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Thongke.Designer.cs">
+      <DependentUpon>Thongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongkeHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ThongkeHDB.Designer.cs">
+      <DependentUpon>ThongkeHDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongkeHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ThongkeHDN.Designer.cs">
+      <DependentUpon>ThongkeHDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TrangChu.Designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\ChitietHDBan.resx">
+      <DependentUpon>ChitietHDBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChitietHDNhap.resx">
+      <DependentUpon>ChitietHDNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DangNhapHT.resx">
+      <DependentUpon>DangNhapHT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLHoaDonBan.resx">
+      <DependentUpon>QLHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLHoaDonNhap.resx">
+      <DependentUpon>QLHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLKhachHang.resx">
+      <DependentUpon>QLKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLLoaiMyPham.resx">
+      <DependentUpon>QLLoaiMyPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLNhaCungCap.resx">
+      <DependentUpon>QLNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLTaiKhoan.resx">
+      <DependentUpon>QLTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLThongTinMyPham.resx">
+      <DependentUpon>QLThongTinMyPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLThongTinNhanVien.resx">
+      <DependentUpon>QLThongTinNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QLTonKho.resx">
+      <DependentUpon>QLTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Thongke.resx">
+      <DependentUpon>Thongke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ThongkeHDB.resx">
+      <DependentUpon>ThongkeHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ThongkeHDN.resx">
+      <DependentUpon>ThongkeHDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DataAccess\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataAccess\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Template\Hoadon.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\banner.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\user.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\information-button.png" />
+    <None Include="image\in4.png" />
+    <None Include="image\inf.png" />
+    <None Include="image\delete.png" />
+    <None Include="image\edit.png" />
+    <None Include="image\add.png" />
+    <None Include="image\new.png" />
+    <None Include="image\logo2.jpg" />
+    <None Include="image\logoshop.jpg" />
+    <None Include="image\logo1.png" />
+    <None Include="image\logo.jpg" />
+    <None Include="image\rsz_1228873144.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\exit.png" />
+    <None Include="image\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataAccess\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataAccess\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

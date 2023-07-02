@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoAn1-LuuDucQuang-10121201", "DoAn1-LuuDucQuang-10121201\DoAn1-LuuDucQuang-10121201.csproj", "{026553E1-36CD-4979-949C-C3E6693BA49B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QLMyphamProject", "QLMyphamProject\QLMyphamProject.vdproj", "{4C85AFAF-8FA1-4401-942C-2E56163FE1D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{026553E1-36CD-4979-949C-C3E6693BA49B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{026553E1-36CD-4979-949C-C3E6693BA49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{026553E1-36CD-4979-949C-C3E6693BA49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{026553E1-36CD-4979-949C-C3E6693BA49B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C85AFAF-8FA1-4401-942C-2E56163FE1D6}.Debug|Any CPU.ActiveCfg = Debug
+		{4C85AFAF-8FA1-4401-942C-2E56163FE1D6}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABBEC1E8-035B-40A0-B0E1-16D75FA7745F}
+	EndGlobalSection
+EndGlobal

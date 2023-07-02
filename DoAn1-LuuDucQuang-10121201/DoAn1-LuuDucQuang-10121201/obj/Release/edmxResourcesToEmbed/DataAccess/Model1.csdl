@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLMyPhamCuaCuaHangBanMyPhamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChitietHDB">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaHDB" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MaMP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Dongia" Type="Int32" />
+    <Property Name="Tongtien" Type="Int32" />
+    <NavigationProperty Name="Hoadonban" Relationship="Self.FK__ChitietHD__MaHDB__73BA3083" FromRole="ChitietHDB" ToRole="Hoadonban" />
+    <NavigationProperty Name="ThongTinMyPham" Relationship="Self.FK__ChitietHDB__MaMP__74AE54BC" FromRole="ChitietHDB" ToRole="ThongTinMyPham" />
+  </EntityType>
+  <EntityType Name="ChitietHDN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaHDN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MaMP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="Dongia" Type="Int32" />
+    <Property Name="Tongtien" Type="Int32" />
+    <NavigationProperty Name="Hoadonnhap" Relationship="Self.FK__ChitietHD__MaHDN__6FE99F9F" FromRole="ChitietHDN" ToRole="Hoadonnhap" />
+    <NavigationProperty Name="ThongTinMyPham" Relationship="Self.FK__ChitietHDN__MaMP__70DDC3D8" FromRole="ChitietHDN" ToRole="ThongTinMyPham" />
+  </EntityType>
+  <EntityType Name="DangNhap">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="quyen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Hoadonban">
+    <Key>
+      <PropertyRef Name="MaHDB" />
+    </Key>
+    <Property Name="MaHDB" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Ngayban" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ChitietHDBs" Relationship="Self.FK__ChitietHD__MaHDB__73BA3083" FromRole="Hoadonban" ToRole="ChitietHDB" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK__Hoadonban__MaKH__48CFD27E" FromRole="Hoadonban" ToRole="KhachHang" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK__Hoadonban__MaNV__47DBAE45" FromRole="Hoadonban" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="Hoadonnhap">
+    <Key>
+      <PropertyRef Name="MaHDN" />
+    </Key>
+    <Property Name="MaHDN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Ngaynhap" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ChitietHDNs" Relationship="Self.FK__ChitietHD__MaHDN__6FE99F9F" FromRole="Hoadonnhap" ToRole="ChitietHDN" />
+    <NavigationProperty Name="NhanVien" Relationship="Self.FK__Hoadonnhap__MaNV__5CD6CB2B" FromRole="Hoadonnhap" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sdt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Hoadonbans" Relationship="Self.FK__Hoadonban__MaKH__48CFD27E" FromRole="KhachHang" ToRole="Hoadonban" />
+  </EntityType>
+  <EntityType Name="LoaiMyPham">
+    <Key>
+      <PropertyRef Name="MaloaiMP" />
+    </Key>
+    <Property Name="MaloaiMP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenloaiMP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ThongTinMyPhams" Relationship="Self.FK__ThongTinM__Maloa__403A8C7D" FromRole="LoaiMyPham" ToRole="ThongTinMyPham" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sdt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ThongTinMyPhams" Relationship="Self.FK__ThongTinM__MaNCC__412EB0B6" FromRole="NhaCungCap" ToRole="ThongTinMyPham" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sdt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Hoadonbans" Relationship="Self.FK__Hoadonban__MaNV__47DBAE45" FromRole="NhanVien" ToRole="Hoadonban" />
+    <NavigationProperty Name="Hoadonnhaps" Relationship="Self.FK__Hoadonnhap__MaNV__5CD6CB2B" FromRole="NhanVien" ToRole="Hoadonnhap" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ThongTinMyPham">
+    <Key>
+      <PropertyRef Name="MaMP" />
+    </Key>
+    <Property Name="MaMP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenMP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dungtich" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MaloaiMP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaNCC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Giaban" Type="Int32" />
+    <Property Name="Mota" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ChitietHDBs" Relationship="Self.FK__ChitietHDB__MaMP__74AE54BC" FromRole="ThongTinMyPham" ToRole="ChitietHDB" />
+    <NavigationProperty Name="ChitietHDNs" Relationship="Self.FK__ChitietHDN__MaMP__70DDC3D8" FromRole="ThongTinMyPham" ToRole="ChitietHDN" />
+    <NavigationProperty Name="LoaiMyPham" Relationship="Self.FK__ThongTinM__Maloa__403A8C7D" FromRole="ThongTinMyPham" ToRole="LoaiMyPham" />
+    <NavigationProperty Name="NhaCungCap" Relationship="Self.FK__ThongTinM__MaNCC__412EB0B6" FromRole="ThongTinMyPham" ToRole="NhaCungCap" />
+    <NavigationProperty Name="Tonkho" Relationship="Self.FK__Tonkho__MaMP__4BAC3F29" FromRole="ThongTinMyPham" ToRole="Tonkho" />
+  </EntityType>
+  <EntityType Name="Tonkho">
+    <Key>
+      <PropertyRef Name="MaMP" />
+    </Key>
+    <Property Name="MaMP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SLton" Type="Int32" />
+    <NavigationProperty Name="ThongTinMyPham" Relationship="Self.FK__Tonkho__MaMP__4BAC3F29" FromRole="Tonkho" ToRole="ThongTinMyPham" />
+  </EntityType>
+  <Association Name="FK__ChitietHD__MaHDB__73BA3083">
+    <End Role="Hoadonban" Type="Self.Hoadonban" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChitietHDB" Type="Self.ChitietHDB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hoadonban">
+        <PropertyRef Name="MaHDB" />
+      </Principal>
+      <Dependent Role="ChitietHDB">
+        <PropertyRef Name="MaHDB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChitietHDB__MaMP__74AE54BC">
+    <End Role="ThongTinMyPham" Type="Self.ThongTinMyPham" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChitietHDB" Type="Self.ChitietHDB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThongTinMyPham">
+        <PropertyRef Name="MaMP" />
+      </Principal>
+      <Dependent Role="ChitietHDB">
+        <PropertyRef Name="MaMP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChitietHD__MaHDN__6FE99F9F">
+    <End Role="Hoadonnhap" Type="Self.Hoadonnhap" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChitietHDN" Type="Self.ChitietHDN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hoadonnhap">
+        <PropertyRef Name="MaHDN" />
+      </Principal>
+      <Dependent Role="ChitietHDN">
+        <PropertyRef Name="MaHDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChitietHDN__MaMP__70DDC3D8">
+    <End Role="ThongTinMyPham" Type="Self.ThongTinMyPham" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChitietHDN" Type="Self.ChitietHDN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThongTinMyPham">
+        <PropertyRef Name="MaMP" />
+      </Principal>
+      <Dependent Role="ChitietHDN">
+        <PropertyRef Name="MaMP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadonban__MaKH__48CFD27E">
+    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Hoadonban" Type="Self.Hoadonban" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="Hoadonban">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadonban__MaNV__47DBAE45">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Hoadonban" Type="Self.Hoadonban" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="Hoadonban">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadonnhap__MaNV__5CD6CB2B">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Hoadonnhap" Type="Self.Hoadonnhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="Hoadonnhap">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ThongTinM__Maloa__403A8C7D">
+    <End Role="LoaiMyPham" Type="Self.LoaiMyPham" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ThongTinMyPham" Type="Self.ThongTinMyPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiMyPham">
+        <PropertyRef Name="MaloaiMP" />
+      </Principal>
+      <Dependent Role="ThongTinMyPham">
+        <PropertyRef Name="MaloaiMP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ThongTinM__MaNCC__412EB0B6">
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ThongTinMyPham" Type="Self.ThongTinMyPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="ThongTinMyPham">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tonkho__MaMP__4BAC3F29">
+    <End Role="ThongTinMyPham" Type="Self.ThongTinMyPham" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tonkho" Type="Self.Tonkho" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ThongTinMyPham">
+        <PropertyRef Name="MaMP" />
+      </Principal>
+      <Dependent Role="Tonkho">
+        <PropertyRef Name="MaMP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLMyPhamCuaCuaHangBanMyPhamEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChitietHDBs" EntityType="Self.ChitietHDB" />
+    <EntitySet Name="ChitietHDNs" EntityType="Self.ChitietHDN" />
+    <EntitySet Name="DangNhaps" EntityType="Self.DangNhap" />
+    <EntitySet Name="Hoadonbans" EntityType="Self.Hoadonban" />
+    <EntitySet Name="Hoadonnhaps" EntityType="Self.Hoadonnhap" />
+    <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+    <EntitySet Name="LoaiMyPhams" EntityType="Self.LoaiMyPham" />
+    <EntitySet Name="NhaCungCaps" EntityType="Self.NhaCungCap" />
+    <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="ThongTinMyPhams" EntityType="Self.ThongTinMyPham" />
+    <EntitySet Name="Tonkhoes" EntityType="Self.Tonkho" />
+    <AssociationSet Name="FK__ChitietHD__MaHDB__73BA3083" Association="Self.FK__ChitietHD__MaHDB__73BA3083">
+      <End Role="Hoadonban" EntitySet="Hoadonbans" />
+      <End Role="ChitietHDB" EntitySet="ChitietHDBs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChitietHDB__MaMP__74AE54BC" Association="Self.FK__ChitietHDB__MaMP__74AE54BC">
+      <End Role="ThongTinMyPham" EntitySet="ThongTinMyPhams" />
+      <End Role="ChitietHDB" EntitySet="ChitietHDBs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChitietHD__MaHDN__6FE99F9F" Association="Self.FK__ChitietHD__MaHDN__6FE99F9F">
+      <End Role="Hoadonnhap" EntitySet="Hoadonnhaps" />
+      <End Role="ChitietHDN" EntitySet="ChitietHDNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChitietHDN__MaMP__70DDC3D8" Association="Self.FK__ChitietHDN__MaMP__70DDC3D8">
+      <End Role="ThongTinMyPham" EntitySet="ThongTinMyPhams" />
+      <End Role="ChitietHDN" EntitySet="ChitietHDNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadonban__MaKH__48CFD27E" Association="Self.FK__Hoadonban__MaKH__48CFD27E">
+      <End Role="KhachHang" EntitySet="KhachHangs" />
+      <End Role="Hoadonban" EntitySet="Hoadonbans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadonban__MaNV__47DBAE45" Association="Self.FK__Hoadonban__MaNV__47DBAE45">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="Hoadonban" EntitySet="Hoadonbans" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadonnhap__MaNV__5CD6CB2B" Association="Self.FK__Hoadonnhap__MaNV__5CD6CB2B">
+      <End Role="NhanVien" EntitySet="NhanViens" />
+      <End Role="Hoadonnhap" EntitySet="Hoadonnhaps" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ThongTinM__Maloa__403A8C7D" Association="Self.FK__ThongTinM__Maloa__403A8C7D">
+      <End Role="LoaiMyPham" EntitySet="LoaiMyPhams" />
+      <End Role="ThongTinMyPham" EntitySet="ThongTinMyPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ThongTinM__MaNCC__412EB0B6" Association="Self.FK__ThongTinM__MaNCC__412EB0B6">
+      <End Role="NhaCungCap" EntitySet="NhaCungCaps" />
+      <End Role="ThongTinMyPham" EntitySet="ThongTinMyPhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tonkho__MaMP__4BAC3F29" Association="Self.FK__Tonkho__MaMP__4BAC3F29">
+      <End Role="ThongTinMyPham" EntitySet="ThongTinMyPhams" />
+      <End Role="Tonkho" EntitySet="Tonkhoes" />
+    </AssociationSet>
+    <FunctionImport Name="SP_SPbancham" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_SPbancham_Result)" />
+    <FunctionImport Name="SP_SPbanchay" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_SPbanchay_Result)" />
+    <FunctionImport Name="SP_SPsaphet" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_SPsaphet_Result)" />
+    <FunctionImport Name="SP_thongkenamHDB" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_thongkenamHDB_Result)">
+      <Parameter Name="nam" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_thongkenamHDN" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_thongkenamHDN_Result)">
+      <Parameter Name="nam" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_thongkethangHDB" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_thongkethangHDB_Result)">
+      <Parameter Name="thang" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_thongkethangHDN" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_thongkethangHDN_Result)">
+      <Parameter Name="thang" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Timthoigian" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_Timthoigian_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_TimthoigianHDN" ReturnType="Collection(QLMyPhamCuaCuaHangBanMyPhamModel.SP_TimthoigianHDN_Result)">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_SPbancham_Result">
+    <Property Type="String" Name="MaMP" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenMP" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Dungtich" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MaloaiMP" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaNCC" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Giaban" Nullable="true" />
+    <Property Type="String" Name="Mota" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SPbanchay_Result">
+    <Property Type="String" Name="MaMP" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenMP" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Dungtich" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MaloaiMP" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaNCC" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Giaban" Nullable="true" />
+    <Property Type="String" Name="Mota" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_SPsaphet_Result">
+    <Property Type="String" Name="MaMP" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenMP" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Dungtich" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="MaloaiMP" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MaNCC" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Giaban" Nullable="true" />
+    <Property Type="String" Name="Mota" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_thongkenamHDB_Result">
+    <Property Type="String" Name="ID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaHDB" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaMP" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Soluong" Nullable="true" />
+    <Property Type="Int32" Name="Dongia" Nullable="true" />
+    <Property Type="Int32" Name="Tongtien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_thongkenamHDN_Result">
+    <Property Type="String" Name="ID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaHDN" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaMP" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Soluong" Nullable="true" />
+    <Property Type="Int32" Name="Dongia" Nullable="true" />
+    <Property Type="Int32" Name="Tongtien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_thongkethangHDB_Result">
+    <Property Type="String" Name="ID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaHDB" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaMP" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Soluong" Nullable="true" />
+    <Property Type="Int32" Name="Dongia" Nullable="true" />
+    <Property Type="Int32" Name="Tongtien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_thongkethangHDN_Result">
+    <Property Type="String" Name="ID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaHDN" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaMP" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Soluong" Nullable="true" />
+    <Property Type="Int32" Name="Dongia" Nullable="true" />
+    <Property Type="Int32" Name="Tongtien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_Timthoigian_Result">
+    <Property Type="String" Name="ID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaHDB" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaMP" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Soluong" Nullable="true" />
+    <Property Type="Int32" Name="Dongia" Nullable="true" />
+    <Property Type="Int32" Name="Tongtien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_TimthoigianHDN_Result">
+    <Property Type="String" Name="ID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaHDN" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MaMP" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Soluong" Nullable="true" />
+    <Property Type="Int32" Name="Dongia" Nullable="true" />
+    <Property Type="Int32" Name="Tongtien" Nullable="true" />
+  </ComplexType>
+</Schema>

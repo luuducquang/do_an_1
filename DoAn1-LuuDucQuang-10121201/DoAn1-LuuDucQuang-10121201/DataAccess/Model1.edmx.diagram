@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2e020b63165b4b148c075d6e3d95ac4a" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.ChitietHDB" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.ChitietHDN" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.DangNhap" Width="1.5" PointX="2.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.Hoadonban" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.Hoadonnhap" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.KhachHang" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.LoaiMyPham" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.NhanVien" Width="1.5" PointX="0.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.sysdiagram" Width="1.5" PointX="5.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.ThongTinMyPham" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLMyPhamCuaCuaHangBanMyPhamModel.Tonkho" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__ChitietHD__MaHDB__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__ChitietHDB__MaMP__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__ChitietHD__MaHDN__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__ChitietHDN__MaMP__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__Hoadonban__MaKH__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__Hoadonban__MaNV__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__Hoadonnhap__MaNV__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__ThongTinM__Maloa__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__ThongTinM__MaNCC__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QLMyPhamCuaCuaHangBanMyPhamModel.FK__Tonkho__MaMP__4BAC3F29" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
